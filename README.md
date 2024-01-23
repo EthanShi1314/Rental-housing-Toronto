@@ -6,6 +6,6 @@ An analysis of the progress of the text in this article. In today's society, the
 # Output 
 Includes paper.rmd & paper.pdf & references.bib
 # Input 
-Includes toronto_rentals.csv, which is the true dataset
+Includes toronto_rentals.csv, which is the true dataset. Also the cleaned_toronto_rentals.csv, which is a clean dataset.
 # Script
 Includes the three steps I did. Include is a simulation step, a data-download step and a data-clean step
