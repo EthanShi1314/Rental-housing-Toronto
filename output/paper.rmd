@@ -14,6 +14,7 @@ output:
  bookdown::pdf_document2
 
 toc: TRUE
+bibliography: references.bib
 ---
 
 ```{r setup, include=FALSE}
@@ -29,13 +30,13 @@ library(knitr)
 
 # Introduction
 
-This comprehensive study aims to investigate the distribution of property types within the dynamic Toronto rental market, which is a dynamic and ever-changing landscape. Investors, urban planners, and prospective renters are just a few of the many groups who have a vested interest in keeping up with the latest rental property trends and subtleties in an otherwise thriving real estate market. An broad array of rental listings, each item richly detailed with information spanning unique IDs, property attributes, and geographical markers, provide the substantial data set that this study utilises. A comprehensive study and simulation of the dataset, which has been cleaned and standardized to the highest standards to guarantee accuracy, forms the backbone of the research. In order to provide a complete image of the rental market's composition, the main goal is to extract the substance of the dataset in order to show the proportional representation of different property kinds. This will be done by focusing on major categories like apartments and condominiums. A strategic vantage point that will enhance comprehension and drive educated decision-making in Toronto's booming rental market is promised by this study, which intends to uncover patterns, determine trends, and estimate future trajectories by diving deep into this rich information.
+This comprehensive study aims to investigate the distribution of property types within the dynamic Toronto rental market, which is a dynamic and ever-changing landscape. Investors, urban planners, and prospective renters are just a few of the many groups who have a vested interest in keeping up with the latest rental property trends and subtleties in an otherwise thriving real estate market. An broad array of rental listings, each item richly detailed with information spanning unique IDs, property attributes, and geographical markers, provide the substantial data set that this study utilises. A comprehensive study and simulation of the dataset, which has been cleaned and standardized to the highest standards to guarantee accuracy, forms the backbone of the research. In order to provide a complete image of the rental market's composition, the main goal is to extract the substance of the dataset in order to show the proportional representation of different property kinds. This will be done by focusing on major categories like apartments and condominiums. A strategic vantage point that will enhance comprehension and drive educated decision-making in Toronto's booming rental market is promised by this study, which intends to uncover patterns, determine trends, and estimate future trajectories by diving deep into this rich information.[@cite1]
 
 # Data
 
 ## The housing rental market in Toronto, here's a detailed descrption of the dataset
 
-The dataset chosen for this study provides a comprehensive look at the rental property market in Toronto, with a wide range of variables that give a detailed view of the sector. The dataset consists of 7,922 observations and is organised into eight variables, each providing valuable information about the listed properties. X_id: This variable acts as a unique identifier for each listing, ensuring that every property can be easily recognized and referenced. It plays a crucial role in maintaining data integrity and enabling individual analysis. Property_Type: One of the key factors to consider is the property type, which classifies each listing into categories like Condominium, Apartment, Duplex/Triplex/Fourplex, Single/Semi-detached House, Townhouse/ Row House. This variable plays a crucial role in analysing the market's composition and gaining insights into the popularity and prevalence of various rental accommodations. Above are two important variables I used for the paper.
+The dataset chosen for this study provides a comprehensive look at the rental property market in Toronto, with a wide range of variables that give a detailed view of the sector. The dataset consists of 7,922 observations and is organised into eight variables, each providing valuable information about the listed properties. X_id: This variable acts as a unique identifier for each listing, ensuring that every property can be easily recognized and referenced. It plays a crucial role in maintaining data integrity and enabling individual analysis.[@citeknitr] Property_Type: One of the key factors to consider is the property type, which classifies each listing into categories like Condominium, Apartment, Duplex/Triplex/Fourplex, Single/Semi-detached House, Townhouse/ Row House.[@citedata] This variable plays a crucial role in analysing the market's composition and gaining insights into the popularity and prevalence of various rental accommodations.[@OpenAI2023ChatGPT4] Above are two important variables I used for the paper.[@citekableExtra]
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
 library(knitr)
@@ -61,7 +62,7 @@ kable(df_selected, caption = "ID of Rental Housing and the Property Type", align
 
 ```
 
-In this step, I selected two variables in the file: ID and room type. I made them into a table to reflect the room types corresponding to each listing. After the table was generated, in order to check whether the code was correct, I intercepted the first six rows and the last six rows. As expected, the ID and room type are correctly matched.
+In this step, I selected two variables in the file: ID and room type. I made them into a table to reflect the room types corresponding to each listing. After the table was generated, in order to check whether the code was correct, I intercepted the first six rows and the last six rows.[@OpenAI2023ChatGPT4] As expected, the ID and room type are correctly matched.[@citetidyverse]
 
 ```{r echo=FALSE, message-FALSE}
 library(tidyverse)
@@ -90,11 +91,11 @@ ggplot(data = simulated_properties_df, aes(x = simulated_properties, y = Freq)) 
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) 
 ```
 
-Through the data on the website, I got the proportion of rental housing in 2023, and I found that the proportion of condos and apartments reached 80.87%. The rest are other properties. So I chose to simulate the data and used the set.seed code to ensure this was a fixed simulation. I tried simulating 10000 times and got this bar chart. As shown in the figure, condos and apartments account for the majority, and the remaining three room types are typeA, TypeB, and TypeC, which account for about 20%.
+Through the data on the website, I got the proportion of rental housing in 2023, and I found that the proportion of condos and apartments reached 80.87%. The rest are other properties. So I chose to simulate the data and used the set.seed code to ensure this was a fixed simulation. [@OpenAI2023ChatGPT4]I tried simulating 10000 times and got this bar chart. As shown in the figure, condos and apartments account for the majority, and the remaining three room types are typeA, TypeB, and TypeC, which account for about 20%.[@cite2]
 
 # Acquire
 
-After completing the data simulation, I need to analyze it through the actual data on the official website. First I select the IDs of the listings and their room types. After selecting them, I will make a distribution map of each room type in all ranges. Through these distribution maps, we can determine which room types are popular.
+After completing the data simulation, I need to analyze it through the actual data on the official website. First I select the IDs of the listings and their room types. [@OpenAI2023ChatGPT4]After selecting them, I will make a distribution map of each room type in all ranges.[@cite3] Through these distribution maps, we can determine which room types are popular.[@citeR]
 
 ```{r echo=FALSE, message=FALSE}
 library(readr)
@@ -115,7 +116,7 @@ ggplot(df, aes(x = property_type)) +
   theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-We can clearly see that this is somewhat different from what I've gathered before. First of all, we can see that in the simulation, I chose the data in December 2023. Among them, apartments and condos account for about 80%. However, in the actual data, single/semi detached houses seem to account for the majority. Therefore, I believe that the factors that affect the market are not just room types, but sometimes weather, environment, and geography have a lot to do with it. For example, when international students return to Toronto to attend classes, the demand for condos and apartments will definitely be higher than usual.
+We can clearly see that this is somewhat different from what I've gathered before. First of all, we can see that in the simulation, I chose the data in December 2023. Among them, apartments and condos account for about 80%. However, in the actual data, single/semi detached houses seem to account for the majority.[@OpenAI2023ChatGPT4] Therefore, I believe that the factors that affect the market are not just room types, but sometimes weather, environment, and geography have a lot to do with it. For example, when international students return to Toronto to attend classes, the demand for condos and apartments will definitely be higher than usual.
 
 # Discussion
 
